@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Basics</title>
+</head>
+
+<body>
+  <script>
+    `use strict`;
+    const list =
+      `========================
+      現在持っているタスク一覧
+    ========================`;
+    const task = [
+      { content: "机を片付ける", genre: "掃除", },
+      { content: "牛乳を買う", genre: "買い物", },
+      { content: "散歩する", genre: "運動", }
+    ];
+    const showTask = () => {
+      console.log(list);
+      task.forEach((value, index) => {
+        console.log(`${index}:[内容]${value.content}、[ジャンル]${value.genre}`);
+      });
+    }
+    showTask();
+
+    const pushTask = () => {
+      task.push({ content: prompt("タスクを入力してください"), genre: prompt("ジャンルを入力してください") });
+    }
+    pushTask();
+    showTask();
+  </script>
+</body>
+
+</html>
